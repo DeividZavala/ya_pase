@@ -3,7 +3,7 @@ from django.db import models
 
 class Curso(models.Model):
 	titulo=models.CharField(max_length=50)
-	descripcion=models.CharField(max_length=100)
+	descripcion=models.CharField(max_length=150)
 	masinfo=models.TextField()
 	img=models.URLField()
 	video_link=models.URLField()
