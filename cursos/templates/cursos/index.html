@@ -32,18 +32,18 @@ CON UN CHORRO DE EJERCICIOS.</p>
     <h4>Nuestros Cursos:</h4>
     <br>
 
-
+{%for curso in cursos%}
        <div class="car small col s12 m6 l3 ">
       <div class="row">
         <div class="col s12">
           <div class="card hoverable">
             <div class="card-image">
-              <img src="{%static 'media/curso_mini.png'%}">
-              <span class="card-title">Economía II (2do Parcial)</span>
+              <img src="{{curso.img}}">
+              <span class="card-title">{{curso.titulo}}</span>
             </div>
             <div class="card-content">
-            <strong>Economía II (2do Parcial)</strong>
-              <p class="grey-text">curso que permite construir una perspectiva general sobre el funcionamiento de la economía de un país.</p>
+            <strong>{{curso.titulo}}</strong>
+              <p class="grey-text">{{curso.descripcion}}</p>
             </div>
             <div class="card-action valign-wrapper">
               <i class="material-icons valing">person_pin</i><span class="datitos">160</span>
@@ -56,168 +56,9 @@ CON UN CHORRO DE EJERCICIOS.</p>
         </div>
       </div>
     </div>
+{%endfor%}
 
-             <div class="car small col s12 m6 l3 ">
-      <div class="row">
-        <div class="col s12">
-          <div class="card hoverable">
-            <div class="card-image">
-              <img src="{%static 'media/curso_mini.png'%}">
-              <span class="card-title">Economía II (2do Parcial)</span>
-            </div>
-            <div class="card-content">
-            <strong>Economía II (2do Parcial)</strong>
-              <p class="grey-text">curso que permite construir una perspectiva general sobre el funcionamiento de la economía de un país.</p>
-            </div>
-            <div class="card-action valign-wrapper">
-              <i class="material-icons valing">person_pin</i><span class="datitos">160</span>
-              <i class="material-icons valing right">thumb_up</i><span class="datitos">100%(12)</span>
-            </div>
-             <div class="margen">
-                <a class=" waves-effect waves-light btn white-text">MX$ 499</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-           <div class="car small col s12 m6 l3 ">
-      <div class="row">
-        <div class="col s12">
-          <div class="card hoverable">
-            <div class="card-image">
-              <img src="{%static 'media/curso_mini.png'%}">
-              <span class="card-title">Economía II (2do Parcial)</span>
-            </div>
-            <div class="card-content">
-            <strong>Economía II (2do Parcial)</strong>
-              <p class="grey-text">curso que permite construir una perspectiva general sobre el funcionamiento de la economía de un país.</p>
-            </div>
-            <div class="card-action valign-wrapper">
-              <i class="material-icons valing">person_pin</i><span class="datitos">160</span>
-              <i class="material-icons valing right">thumb_up</i><span class="datitos">100%(12)</span>
-            </div>
-             <div class="margen">
-                <a class=" waves-effect waves-light btn white-text">MX$ 499</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-           <div class="car small col s12 m6 l3 ">
-      <div class="row">
-        <div class="col s12">
-          <div class="card hoverable">
-            <div class="card-image">
-              <img src="{%static 'media/curso_mini.png'%}">
-              <span class="card-title">Economía II (2do Parcial)</span>
-            </div>
-            <div class="card-content">
-            <strong>Economía II (2do Parcial)</strong>
-              <p class="grey-text">curso que permite construir una perspectiva general sobre el funcionamiento de la economía de un país.</p>
-            </div>
-            <div class="card-action valign-wrapper">
-              <i class="material-icons valing">person_pin</i><span class="datitos">160</span>
-              <i class="material-icons valing right">thumb_up</i><span class="datitos">100%(12)</span>
-            </div>
-             <div class="margen">
-                <a class=" waves-effect waves-light btn white-text">MX$ 499</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-           <div class="car small col s12 m6 l3 ">
-      <div class="row">
-        <div class="col s12">
-          <div class="card hoverable">
-            <div class="card-image">
-              <img src="{%static 'media/curso_mini.png'%}">
-              <span class="card-title">Economía II (2do Parcial)</span>
-            </div>
-            <div class="card-content">
-            <strong>Economía II (2do Parcial)</strong>
-              <p class="grey-text">curso que permite construir una perspectiva general sobre el funcionamiento de la economía de un país.</p>
-            </div>
-            <div class="card-action valign-wrapper">
-              <i class="material-icons valing">person_pin</i><span class="datitos">160</span>
-              <i class="material-icons valing right">thumb_up</i><span class="datitos">100%(12)</span>
-            </div>
-             <div class="margen">
-                <a class=" waves-effect waves-light btn white-text">MX$ 499</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-           <div class="car small col s12 m6 l3 ">
-      <div class="row">
-        <div class="col s12">
-          <div class="card hoverable">
-            <div class="card-image">
-              <img src="{%static 'media/curso_mini.png'%}">
-              <span class="card-title">Economía II (2do Parcial)</span>
-            </div>
-            <div class="card-content">
-            <strong>Economía II (2do Parcial)</strong>
-              <p class="grey-text">curso que permite construir una perspectiva general sobre el funcionamiento de la economía de un país.</p>
-            </div>
-            <div class="card-action valign-wrapper">
-              <i class="material-icons valing">person_pin</i><span class="datitos">160</span>
-              <i class="material-icons valing right">thumb_up</i><span class="datitos">100%(12)</span>
-            </div>
-             <div class="margen">
-                <a class=" waves-effect waves-light btn white-text">MX$ 499</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-           <div class="car small col s12 m6 l3 ">
-      <div class="row">
-        <div class="col s12">
-          <div class="card hoverable">
-            <div class="card-image">
-              <img src="{%static 'media/curso_mini.png'%}">
-              <span class="card-title">Economía II (2do Parcial)</span>
-            </div>
-            <div class="card-content">
-            <strong>Economía II (2do Parcial)</strong>
-              <p class="grey-text">curso que permite construir una perspectiva general sobre el funcionamiento de la economía de un país.</p>
-            </div>
-            <div class="card-action valign-wrapper">
-              <i class="material-icons valing">person_pin</i><span class="datitos">160</span>
-              <i class="material-icons valing right">thumb_up</i><span class="datitos">100%(12)</span>
-            </div>
-             <div class="margen">
-                <a class=" waves-effect waves-light btn white-text">MX$ 499</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-           <div class="car small col s12 m6 l3 ">
-      <div class="row">
-        <div class="col s12">
-          <div class="card hoverable">
-            <div class="card-image">
-              <img src="{%static 'media/curso_mini.png'%}">
-              <span class="card-title">Economía II (2do Parcial)</span>
-            </div>
-            <div class="card-content">
-            <strong>Economía II (2do Parcial)</strong>
-              <p class="grey-text">curso que permite construir una perspectiva general sobre el funcionamiento de la economía de un país.</p>
-            </div>
-            <div class="card-action valign-wrapper">
-              <i class="material-icons valing">person_pin</i><span class="datitos">160</span>
-              <i class="material-icons valing right">thumb_up</i><span class="datitos">100%(12)</span>
-            </div>
-             <div class="margen">
-                <a class=" waves-effect waves-light btn white-text">MX$ 499</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+             
 
 
 </section>
