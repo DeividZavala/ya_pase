@@ -33,6 +33,7 @@ CON UN CHORRO DE EJERCICIOS.</p>
     <br>
 
 {%for curso in cursos%}
+  <a class="modal-trigger" href="#modal{{curso.id}}">
        <div class="car small col s12 m6 l3 ">
       <div class="row">
         <div class="col s12">
@@ -56,6 +57,32 @@ CON UN CHORRO DE EJERCICIOS.</p>
         </div>
       </div>
     </div>
+    </a>
+
+    <!-- Modal Structure -->
+  <div id="modal{{curso.id}}" class="modal">
+    <div class="modal-content">
+    <div class="video-container">
+        <iframe width="560" height="315" src="{{curso.video_link}}" frameborder="0" allowfullscreen></iframe>
+      </div>
+  
+      <h4>{{curso.titulo}}</h4>
+      <p>{{curso.descripcion}}</p>
+      <p>
+        {{curso.masinfo}}
+      </p>
+    </div>
+    <div class="modal-footer valign-wrapper right">
+              <i class="material-icons valing">person_pin</i><span class="datitos">160</span>
+              <i class="material-icons valing right">thumb_up</i><span class="datitos">100%(12)</span>
+            
+    <div class="margen">
+                <a class=" waves-effect waves-light btn white-text">Comprar  MX$ 499</a>
+            </div>
+    </div>
+  </div>
+
+
 {%endfor%}
 
              

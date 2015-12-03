@@ -73,3 +73,8 @@ video {
 .margen{
 	margin-left: 1rem;
 }
+.card-title{
+	background: rgba(0,0,0,.5);
+}
+
+
