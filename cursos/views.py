@@ -6,10 +6,5 @@ from django.views.generic import View
 
 class GetCursosView(View):
 	def get(self, request):
-		
-		template = 'cursos/basecursos.html'
-		
-
-		
-	
+		template = 'cursos/index.html'
 		return render(request, template)
