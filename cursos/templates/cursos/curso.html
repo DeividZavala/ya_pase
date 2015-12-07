@@ -1,0 +1,73 @@
+{% extends 'cursos/basecursos.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<section class="section grey row">
+
+<article class="col s12 m6 offset-l1" id="trailer">
+
+  <div class="video-container">
+        <iframe width="" height="" src="{{curso.video_link}}" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+</article>
+</section>
+<section class="section row">
+
+
+
+
+<div class="col s12 l10 container"id="temario">
+<h2>Temario:</h2>
+
+  <ul class="collapsible popout" data-collapsible="expandable">
+
+  {%for tema in curso.temas.all%}
+
+  <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>
+      {{tema.titulo}}
+      </div>
+      <div class="collapsible-body">
+      <ul class="">
+      {%for clase in tema.subtemas.all%}
+      <a href="#!"><li><i class="material-icons">play_circle_outline</i>
+      {{clase}}</li></a>
+      {%endfor%}
+      </ul>
+
+
+      </div>
+    </li>
+
+         {%endfor%}
+
+  </ul>
+  
+</div>
+  
+</section>
+          
+
+
+
+
+  <!--Jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+<script>
+<script>
+   $(document).ready(function(){
+
+
+  $('.collapsible').collapsible({
+    accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+
+  });
+</script>
+
+     {%endblock content%}

@@ -1,6 +1,9 @@
 .logo{
 	margin-top: .5rem;
 }
+a{
+	color:grey;
+}
 video { 
     position: fixed;
     top: 50%;
