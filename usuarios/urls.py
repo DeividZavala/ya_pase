@@ -19,5 +19,9 @@ urlpatterns = [
      	r'^login/$',
      	views.LoginView.as_view(),
      	name="show_login"),
+     url(
+          r'^logout/$',
+          views.LogoutView.as_view(),
+          name="show_logout"),
 ]
 

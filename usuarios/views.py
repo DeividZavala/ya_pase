@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.shortcuts import redirect
@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse
 from .forms import RegistroUserForm
 from django.views.generic import View
 from .models import UserProfile
+from django.contrib import messages
 
 
 # Create your views here.
@@ -92,3 +93,9 @@ class LoginView(View):
 			"mensaje":mensaje,
 			}
 			return render(request,template,context)
+
+class LogoutView(View):
+	def get(self,request):
+		logout(request)
+		messages.success(request,"Te has desconectado con éxito.")
+		return redirect(reverse('show_login'))

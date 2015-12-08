@@ -82,5 +82,9 @@ video {
 #titulo strong{
 	font-size: 1.5rem;
 }
+.errorlist li{
+	background-color: #FFA500;
+	color:#FF0000;
+}
 
 

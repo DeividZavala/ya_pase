@@ -88,5 +88,15 @@ video {
 	background-color: #FFA500;
 	color:#FF0000;
 }
+.perfil{
+	background: url(https://static.platzi.com/static/organizations/v2/images/profile/cover.7540b13e6f4c.jpg);
+	background-size:cover;
+}
+.profile img{
+	border-radius: 50%;
+}
+.profile{
+	color:white;
+}
 
 

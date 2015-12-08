@@ -32,7 +32,15 @@
          <li><a></a></li>
           <li><a></a></li>
            <li><a></a></li>
+           {% if not user.is_authenticated %}
            <li><a href="{%url 'show_login'%}">Login</a></li>
+           {%endif%}
+           {% if user.is_authenticated %}
+           <li><a href="{%url 'show_logout'%}">Cerrar Sesión</a></li>
+           {%endif%}
+           {%if user.is_authenticated%}
+           <li><a href="{%url 'show_index'%}"><img style="max-height:64px;" src="{{MEDIA_URL}}{{user.userprofile.photo}}" alt=""></a></li>
+           {%endif%}
         
       </ul>
       <ul class="side-nav" id="mobile-demo">
@@ -47,7 +55,7 @@
   <!--Cabezote-->
 
 
-
+{% include 'cursos/_messages.html' %}
 {% block content %}
 {% endblock%}
 
