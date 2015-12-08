@@ -27,8 +27,8 @@ class Clase(models.Model):
 	titulo=models.CharField(max_length=100)
 	descripcion=models.CharField(max_length=150,blank=True)
 	numero=models.FloatField()
-	Vide_link=models.URLField()
-	# curso_padre=models.ManyToManyField('Curso')
+	video_link=models.URLField()
+	curso_padre=models.ManyToManyField('Curso',blank=True)
 	# subtema_padre=models.ForeignKey('Tema')
 
 

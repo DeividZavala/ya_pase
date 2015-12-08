@@ -32,13 +32,13 @@
       <div class="collapsible-body">
       <ul class="">
       {%for clase in tema.subtemas.all%}
-      <a href="#!"><li><i class="material-icons">play_circle_outline</i>
+      <a href="{%url 'show_clase' curso.id clase.id%}"><li><i class="material-icons">play_circle_outline</i>
       {{clase}}</li></a>
       {%endfor%}
       </ul>
 
-
       </div>
+
     </li>
 
          {%endfor%}

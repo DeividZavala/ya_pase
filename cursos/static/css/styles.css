@@ -79,5 +79,8 @@ video {
 .card-title{
 	background: rgba(0,0,0,.5);
 }
+#titulo strong{
+	font-size: 1.5rem;
+}
 
 

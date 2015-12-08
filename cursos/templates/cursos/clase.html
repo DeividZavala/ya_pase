@@ -1,0 +1,54 @@
+{% extends 'cursos/basecursos.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+{%for clase in clases%}
+<section class="section">
+<div id="titulo"class="container">
+{%for padre in clase.curso_padre.all%}
+<p><strong>{{clase.numero}}.- {{clase.titulo}}</strong><a href="{%url 'show_curso' padre.id%}"class="right">
+
+{{padre.titulo}}</a></p>
+{%endfor%}
+</div>
+	
+</section>
+<section class="row black">
+
+	<div class="col s12">
+		<div class="video-container">
+        <iframe width="853" height="480" src="{{clase.video_link}}" frameborder="0" allowfullscreen></iframe>
+      </div>
+	</div>
+{%endfor%}
+		
+	
+
+	
+</section>
+<section class="white row">
+<div class="container">
+{%if clases.has_previous%}
+<a href="{% url 'show_clase' curso.id clases.previous_page_number %}" class="waves-effect waves-light btn grey"><i class="material-icons left">call_received</i>Anterior</a>
+{%endif%}
+{%if clases.has_next%}
+<a href="{% url 'show_clase' curso.id clases.next_page_number %}" class="waves-effect waves-light btn right grey"><i class="material-icons right">call_made</i>Siguiente</a>
+{%endif%}
+
+</div>
+<div id="notas">
+<h4 class="col offset-s1">Notas de la clase:</h4>
+	
+</div>
+	
+</section>
+
+
+
+
+
+
+
+
+{%endblock%}
