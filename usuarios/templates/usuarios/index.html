@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title> Putos usuarios</title>
-</head>
-<body>
-	<h1> estos son los usuarios</h1>
+{%extends 'usuarios/baseusuarios.html'%}
+{%block title%}Perfil de Usuario{%endblock title%}
+{%block content%}
+
+<div class="container">
+
+<h2> Esto solo puedes verlo si estas logueado</h2>
+<h4>Hola de nuevo {{user.username}}</h4>
+<figure>
+	<img src="{{MEDIA_URL}}{{user.userprofile.photo}}">
 	
-</body>
-</html>
+</figure>
+	
+</div>
+
+{%endblock content%}

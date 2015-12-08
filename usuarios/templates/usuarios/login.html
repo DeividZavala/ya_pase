@@ -1,17 +1,28 @@
-{%extends usuarios/baseusuarios.html%}
+{%extends 'usuarios/baseusuarios.html'%}
+{%block title%}Login{%endblock title%}
+
+{%block content%}
+<section class="container">
+<div class="container row">
+  <h3>Login de Usuario</h3>
+  {%if mensaje%}
+  <p class="errorlist">{{mensaje}}</p>
+  {%endif%}
+  
+</div>
 
   <div class="row">
     <form method="post" class="col s12">
   {%csrf_token%}
       <div class="row">
         <div class="input-field col s6">
-          <input name="name" placeholder="Placeholder" id="first_name" type="text" class="validate">
+          <input name="username" placeholder="Placeholder" id="first_name" type="text" class="validate">
           <label for="first_name">Usuario</label>
         </div>
 
       <div class="row">
         <div class="input-field col s12">
-          <input name="pass" id="password" type="password" class="validate">
+          <input name="password" id="password" type="password" class="validate">
           <label for="password">Password</label>
         </div>
       </div>
@@ -20,3 +31,11 @@
 
     </form>
   </div>
+
+  <div>
+    <a href="{%url 'show_registro'%}">Crear una cuenta nueva</a>
+  </div>
+
+</section>
+
+  {%endblock content%}

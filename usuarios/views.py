@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
 from .forms import RegistroUserForm
@@ -50,3 +53,42 @@ class GraciasView(View):
 		"username":username,
 		}
 		return render(request,template,context)
+
+
+class IndexView(View):
+	# @login_required
+	@method_decorator(login_required)
+	def get(self,request):
+		template="usuarios/index.html"
+		return render(request,template)
+
+class LoginView(View):
+	def get(self,request):
+		template="usuarios/login.html"
+		if request.user.is_authenticated():
+			return redirect(reverse("show_index"))
+		else:
+			mensaje=""
+			return render(request,template)
+
+	def post(self,request):
+		template="usuarios/login.html"
+		username=request.POST.get("username","")
+		password=request.POST.get("password","")
+		user=authenticate(username=username,password=password)
+		if user is not None:
+			if user.is_active:
+				login(request,user)
+				return redirect(reverse("show_index"))
+			else:
+				mensaje="La cuenta no está activa"
+				context={
+				"mensaje":mensaje,
+				}
+				return render(request,template,context)
+		else:
+			mensaje="Nombre de usuario o contraseña no valido"
+			context={
+			"mensaje":mensaje,
+			}
+			return render(request,template,context)
