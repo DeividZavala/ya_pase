@@ -122,3 +122,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Personalización de sesiones de usuario BlisS
+LOGIN_URL = '/usuario/login/'
+LOGOUT_URL = '/usuario/logout/'
+
+# Añadimos la ruta para los archivos media de pillow
+MEDIA_ROOT=os.path.join(BASE_DIR,"media")
+MEDIA_URL="/media/"
