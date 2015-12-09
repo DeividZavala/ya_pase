@@ -19,6 +19,9 @@ Welcome back {{ user.get_full_name }}.
 		 </a>
 	 </button>
  </div>
+ <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">
+ Enter with Twitter
+ </a>
  {% endif %}
  <script>
       window.fbAsyncInit = function() {

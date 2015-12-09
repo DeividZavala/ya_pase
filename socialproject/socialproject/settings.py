@@ -43,6 +43,8 @@ INSTALLED_APPS = [
 AUTHENTICATION_BACKENDS = (
 # Facebook
 'social.backends.facebook.FacebookOAuth2',
+# Twitter
+'social.backends.twitter.TwitterOAuth',
 # Django
 'django.contrib.auth.backends.ModelBackend',
 )
@@ -134,6 +136,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+# Facebook Keys
 SOCIAL_AUTH_FACEBOOK_KEY = '1661360734148598'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'bbe6fb1fd893b8ca0cfb3b6d0ac83c69'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/"
+
+SOCIAL_AUTH_TWITTER_KEY = 'OS7U7axH3tMXqmNVBXun8G0fP'
+SOCIAL_AUTH_TWITTER_SECRET = 'YdhN4eciHAt2ACAXoRXQnJ3d5ooKy60Yt08nzzMgHcZ6Tw38R6'
