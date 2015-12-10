@@ -1,32 +1,32 @@
+ {% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
  <meta charset="UTF-8" />
  <title>Login</title>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
- {% load staticfiles %}
- <link rel="stylesheet" href="static/socialproject/login.css">
+ <link rel="stylesheet" href="../../static/css/materialize.css">
+ <link rel="stylesheet" href="../../static/css/login.css">
 </head>
 <body>
  {% if user and not user.is_anonymous %}
+
 Welcome back {{ user.get_full_name }}.
  <a href="{% url 'user-logout' %}">Logout</a>
+
  {% else %}
- <div class = "facebook">
-	 <button>
-		 <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}"><i class="fa fa-facebook-official"></i>
-		 Facebook
-		 </a>
-	 </button>
- </div>
- <div>
-   <button>
-       <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}"><i class="fa fa-twitter"></i>
-       Twitter
-       </a>
-   </button>
- </div>
+
+    <div class = "contenedor">
+
+        <a class="waves-effect waves-light btn Facebook" href= "{% url 'social:begin' 'facebook' %}?next={{ request.path }}"><i class="fa fa-facebook-official"></i>facebook</a>
+        
+        <a class="waves-effect waves-light btn twitter" href= "{% url 'social:begin' 'twitter' %}?next={{ request.path }}"><i class="fa fa-twitter"></i>twitter</a>
+
+    </div>
+
  {% endif %}
+
  <script>
       window.fbAsyncInit = function() {
         FB.init({
