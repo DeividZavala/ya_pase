@@ -3,8 +3,8 @@ from django.views.generic import View
 from django.shortcuts import get_object_or_404, redirect
 from .models import Curso,Tema,Clase
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-# Create your views here.
-
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import permission_required
 
 class GetCursosView(View):
 	def get(self, request):
@@ -16,6 +16,7 @@ class GetCursosView(View):
 		return render(request, template,context)
 
 class ShowCurso(View):
+	
 	def get(self,request,id):
 		template="cursos/curso.html"
 		curso=get_object_or_404(Curso,pk=id)
@@ -28,6 +29,7 @@ class ShowCurso(View):
 
 		
 class ShowClase(View):
+	@method_decorator(permission_required("econo1"),)
 	def get(self,request,id,id_clase):
 		template="cursos/clase.html"
 		curso=get_object_or_404(Curso,pk=id)
