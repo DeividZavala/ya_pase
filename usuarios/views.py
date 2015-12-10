@@ -9,11 +9,24 @@ from .forms import RegistroUserForm
 from django.views.generic import View
 from .models import UserProfile
 from django.contrib import messages
+from django.contrib.auth.decorators import permission_required
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.models import Permission,User
+from django.contrib.contenttypes.models import ContentType
 
 
-# Create your views here.
+# content_type=ContentType.objects.get_for_model(User)
+# permission=Permission.objects.create(codename="econo1",name="Ver curso de ecnonomia 1",content_type=content_type)
+def user_gain_perms(request,user_id):
+	user=get_object_or_404(User,pk=user_id)
+	permission=Permission.objects.get(codename="econo1")
+	user.user_permissions.add(permission)
+	user.has_perm("usuarios.econo1")
+	user=get_object_or_404(User,pk=user_id)
+	user.has_perm("usuarios.econo1")
 
 class Registro(View):
+	
 	def get(self,request):
 		template="usuarios/registro.html"
 		form=RegistroUserForm()
@@ -98,4 +111,4 @@ class LogoutView(View):
 	def get(self,request):
 		logout(request)
 		messages.success(request,"Te has desconectado con éxito.")
-		return redirect(reverse('show_login'))
+		return redirect(reverse('get_cursos'))

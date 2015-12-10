@@ -57,7 +57,7 @@ ROOT_URLCONF = 'ya_pase.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,11 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = (os.path.join(BASE_DIR,"static"),)
 
 # Personalización de sesiones de usuario BlisS
-LOGIN_URL = '/usuario/login/'
-LOGOUT_URL = '/usuario/logout/'
+LOGIN_URL = 'show_login'
+LOGOUT_URL = 'show_logout'
 
 # Añadimos la ruta para los archivos media de pillow
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
