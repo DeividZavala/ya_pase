@@ -5,9 +5,9 @@ class Curso(models.Model):
 	titulo=models.CharField(max_length=50)
 	descripcion=models.CharField(max_length=150,blank=True)
 	masinfo=models.TextField()
-	img=models.URLField()
+	img=models.ImageField(upload_to='cursos',blank=True,null=True)
 	video_link=models.URLField()
-	author=models.ForeignKey('auth.User')
+	author=models.ForeignKey('auth.User',blank=True,null=True)
 	temas=models.ManyToManyField('Tema',blank=True)
 
 	def __str__(self):
