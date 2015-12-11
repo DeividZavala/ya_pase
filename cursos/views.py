@@ -29,7 +29,8 @@ class ShowCurso(View):
 
 		
 class ShowClase(View):
-	@method_decorator(permission_required("econo1"),)
+	@method_decorator(permission_required("auth.econo1"),)
+	# @permission_required("econo1")
 	def get(self,request,id,id_clase):
 		template="cursos/clase.html"
 		curso=get_object_or_404(Curso,pk=id)

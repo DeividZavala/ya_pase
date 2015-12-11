@@ -52,6 +52,13 @@ class Registro(View):
 			user_profile.user=user_model
 			user_profile.photo=photo
 			user_profile.save()
+
+			permission = Permission.objects.get(codename='econo1')
+			user=User.objects.get(email=email)
+			# user.groups.add(permission)
+			user.user_permissions.add(permission)
+			user.save()
+			
 			return redirect(reverse('show_gracias', kwargs={'username': username}))
 		else:
 			context={
