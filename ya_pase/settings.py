@@ -148,7 +148,7 @@ SOCIAL_AUTH_FACEBOOK_SECRET='6208c621bd6f86a366a9c99b298389f5'
 # SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
   'locale': 'ru_RU',
-  'fields': 'id, name, email, age_range, picture'
+  'fields': 'id, name, email, age_range'
 }
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL="get_cursos"
