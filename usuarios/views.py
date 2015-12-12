@@ -2,7 +2,7 @@
 # from django.views.generic import View
 # from django.shortcuts import get_object_or_404 ,redirect
 # from django.http import HttpResponse
-# from models import Usuario
+# from .models import Usuario
 
 
 # # Create your views here.
