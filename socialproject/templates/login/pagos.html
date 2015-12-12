@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pagos</title>
+	<link rel="stylesheet" href="../../static/css/materialize.css">
+	<link rel="stylesheet" href="../../static/css/pagos.css">
+</head>
+<body>
+	<div class = "contenedor">
+		<form action="" method="POST" id="card-form">
+			  <span class="card-errors"></span>
+			  <div class="form-row">
+			    <label>
+			      <span>Nombre del tarjetahabiente</span>
+			      <input type="text" size="20" data-conekta="card[name]"/>
+			    </label>
+			  </div>
+			  <div class="form-row">
+			    <label>
+			      <span>Número de tarjeta de crédito</span>
+			      <input type="text" size="20" data-conekta="card[number]"/>
+			    </label>
+			  </div>
+			  <div class="form-row">
+			    <label>
+			      <span>CVC</span>
+			      <input type="text" size="4" data-conekta="card[cvc]"/>
+			    </label>
+			  </div>
+			  <div class="form-row">
+			    <label>
+			      <span>Escribe aqui el mes de expiración de la tarjeta(2 digítos)</span>
+			      <input type="text" size="2" data-conekta="card[exp_month]"/>
+			      <span>Escribe aqui el año de expiración de la tarjeta(4 digítos)</span>
+			    <input type="text" size="4" data-conekta="card[exp_year]"/>
+			  </div>
+			    </label>
+			  <button type="submit" class= "waves-effect waves-light btn">¡Pagar ahora!</button>
+		</form>
+	</div>
+</body>
+</html>
