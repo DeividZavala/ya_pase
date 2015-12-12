@@ -4,7 +4,7 @@
 {%block content%}
 <section class="container">
 <div class="container row">
-  <h3>Login de Usuario</h3>
+  <h3>Inicia Sesión</h3>
   {%if mensaje%}
   <p class="errorlist">{{mensaje}}</p>
   {%endif%}
@@ -12,30 +12,35 @@
 </div>
 
   <div class="row">
-    <form method="post" class="col s12">
+    <form method="post" class="col s12 m6">
   {%csrf_token%}
-      <div class="row">
-        <div class="input-field col s6">
-          <input name="username" placeholder="Placeholder" id="first_name" type="text" class="validate">
+      
+        <div class="input-field">
+          <input name="username" placeholder="Tu Usuario" id="first_name" type="text" class="validate">
           <label for="first_name">Usuario</label>
-        </div>
+       
 
-      <div class="row">
-        <div class="input-field col s12">
+      
+        <div class="input-field">
           <input name="password" id="password" type="password" class="validate">
           <label for="password">Password</label>
         </div>
-      </div>
-
-      <input type="submit"/>
+      
+      <input  type="submit" class="grey waves-effect waves-light btn">
 
     </form>
-    <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">
- Inicia con Facebook
+    
+    <br>
+    <br>
+    <br>
+
+<a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="blue waves-effect waves-light btn"><i class="material-icons left">thumb_up</i>Inicia con Facebook</a>
+<br>
+ <a href="{%url 'show_registro'%}">Crear una cuenta nueva</a>
   </div>
 
   <div>
-    <a href="{%url 'show_registro'%}">Crear una cuenta nueva</a>
+    
   </div>
 
 </section>

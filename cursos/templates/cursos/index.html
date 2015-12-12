@@ -6,10 +6,13 @@
 <video autoplay  poster="{%static 'media/imagen2.png'%}" id="bgvid" loop>
   <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
 {# <source src="polina.webm" type="video/webm"> #}
-<source src="{%static 'media/video_portada.mp4'%}" type="video/mp4">
+{# {%static 'media/video_portada.mp4'%} #}
+<source src="{%static 'media/video_promo.webm'%}" type="video/mp4">
 </video>
 
-<div id="text-p">
+
+
+<div class="" id="text-p">
   <p>A VECES UNA CLASE NO ES SUFICIENTE PARA PASAR TUS MATERIAS,</p>
   <h1>Con Ya Pasé</h1> 
   <p>ESTUDIA A TU RITMO, EN TUS HORARIOS, 
@@ -22,9 +25,12 @@ CON UN CHORRO DE EJERCICIOS.</p>
 
   </div> 
 </div>
+
+
+
 <section id=""class="section grey lighten-3">
 <article class="container">
-    <h3>Aprende participando</h3>
+    <h3>Aprende a tu ritmo</h3>
     <p class="">Accede a los mejores cursos online para universitarios. Interactúa con los mejores profesionales y descubre que se puede pasar la materia.</p>
 </article>
 </section>
@@ -88,19 +94,10 @@ CON UN CHORRO DE EJERCICIOS.</p>
 
              
 
-
+<a class="col s12 m4 push-m4 red waves-effect waves-light btn">Cargar más cursos</a>
 </section>
 
 
 
-{#         {% for post in posts %}
-            <div class="post">
-                <div class="date">
-                    {{ post.published_date }}
-                </div>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaks }}</p>
-            </div>
-        {% endfor %} #}
 
 {% endblock content%}
