@@ -21,7 +21,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('cursos.urls')),
+    # Social 
+    url('',include('social.apps.django_app.urls',namespace='social')),
+    url(r'^', include('cursos.urls')),
     url(r'^usuario/', include('usuarios.urls')),
     url(
         regex=r'^media/(?P<path>.*)$',

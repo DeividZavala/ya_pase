@@ -7,7 +7,8 @@
 <section class="section">
 <div id="titulo"class="container">
 {%for padre in clase.curso_padre.all%}
-<p><strong>{{clase.numero}}.- {{clase.titulo}}</strong><a href="{%url 'show_curso' padre.id%}"class="right">
+<p><strong>{{clase.numero}}.- {{clase.titulo}}</strong>
+<a href="{%url 'show_curso' padre.id%}"class="right">
 
 {{padre.titulo}}</a></p>
 {%endfor%}

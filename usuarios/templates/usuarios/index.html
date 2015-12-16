@@ -1,4 +1,5 @@
 {%extends 'basecursos.html'%}
+{%load staticfiles%}
 {%block title%}Perfil de Usuario{%endblock title%}
 {%block content%}
 
@@ -8,9 +9,10 @@
 <img class="col s3 l3 responsive-img" src="{{MEDIA_URL}}{{user.userprofile.photo}}">
 
 <div class="data col s12 l5">
-<h4>{{user.username}}</h4>
+<h4>{{user.first_name}} {{user.last_name}}</h4>
 <p>{{user.email}}</p>
 </div>
+
 <div class="edicion col s12 l4">
   <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
     <a class="btn-floating btn-large red">
@@ -27,6 +29,65 @@
 </div>
 
 </div>
+
+
+
+</section>
+<section class="row">
+  <h3 class="grey-text col s12">Tus Cursos:</h3>
+
+    <ul class="collection">
+    <li class="collection-item avatar">
+      <img src="{%static 'media/progreso.png'%}" alt="" class="circle">
+      <h4 class="">Economia I</h4>
+    
+      <a href="{%url 'show_curso' 2%}" class="secondary-content">
+        <div class="chip right">
+          Continuar
+          </div>
+      </a>
+    </li>
+    
+     <li class="collection-item avatar">
+      <img src="{%static 'media/progreso.png'%}" alt="" class="circle">
+      <h4 class="">Finanzas para emprendedores I</h4>
+    
+      <a href="#!" class="secondary-content">
+        <div class="chip right">
+          Continuar
+          </div>
+      </a>
+    </li>
+
+    <li class="collection-item avatar">
+      <img src="{%static 'media/progreso.png'%}" alt="" class="circle">
+      <h4 class="">Química Orgánica</h4>
+    
+      <a href="#!" class="secondary-content">
+        <div class="chip right">
+          Continuar
+          </div>
+      </a>
+    </li>
+
+    <li class="collection-item avatar">
+      <img src="{%static 'media/progreso.png'%}" alt="" class="circle">
+      <h4 class="">Egiptología</h4>
+    
+      <a href="#!" class="secondary-content">
+        <div class="chip right">
+          Continuar
+          </div>
+      </a>
+    </li>
+
+    
+
+  </ul>
+
+
+
+
 </section>
 
 {%endblock content%}
