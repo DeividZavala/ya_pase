@@ -54,5 +54,8 @@ class ShowClase(View):
 		return render(request,template,context)
 
 
-class Pagos(TemplateView):
-	template_name = "cursos/pago.html"
+class Pagos(View):
+	# template_name = "cursos/pago.html"
+	def get(self,request):
+		template="cursos/pago.html"
+		return render(request, template,)
